@@ -31,3 +31,7 @@ extension Double {
     }
     
 }
+
+func FMOD(_ x: Double, _ y: Double) -> Double {
+    return x - floor(x / y) * y
+}
