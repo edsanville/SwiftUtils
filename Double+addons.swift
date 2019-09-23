@@ -30,6 +30,10 @@ extension Double {
         return nil
     }
     
+    func wrap(min: Double, max: Double) -> Double {
+        return min + FMOD(self - min, max - min)
+    }
+    
 }
 
 func FMOD(_ x: Double, _ y: Double) -> Double {

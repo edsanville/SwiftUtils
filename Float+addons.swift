@@ -30,4 +30,14 @@ extension Float {
         return nil
     }
     
+    func compare(other: Float) -> ComparisonResult {
+        if self < other {
+            return .orderedAscending
+        }
+        if self > other {
+            return .orderedDescending
+        }
+        return .orderedSame
+    }
+    
 }
