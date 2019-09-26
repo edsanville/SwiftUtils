@@ -9,15 +9,15 @@
 import Foundation
 
 extension Data {
-    
+
     static func withRandomBytes(_ count: Int) -> Data {
         var data = Data()
-        
+
         for _ in 1...count {
             data.append(UInt8.random(in: UInt8.min...UInt8.max))
         }
-        
+
         return data
     }
-    
+
 }
