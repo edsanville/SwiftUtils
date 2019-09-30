@@ -8,13 +8,13 @@
 import Foundation
 
 extension Float {
-    
+
     static func from(stringOrNumber: Any?) -> Float? {
-        
+
         if stringOrNumber == nil {
             return nil
         }
-        
+
         if let s = stringOrNumber as? String {
             return Float(s)
         }
@@ -29,7 +29,7 @@ extension Float {
 
         return nil
     }
-    
+
     func compare(other: Float) -> ComparisonResult {
         if self < other {
             return .orderedAscending
@@ -39,5 +39,5 @@ extension Float {
         }
         return .orderedSame
     }
-    
+
 }
