@@ -17,6 +17,7 @@ protocol Translator {
 class MyNumberFormatter: NumberFormatter {
 
     var scientificNotationThreshold = 1e13
+    var wordy = true
     var wordyThreshold = 1e6
     static var translate = {
         (s: String) -> String in
@@ -41,7 +42,7 @@ class MyNumberFormatter: NumberFormatter {
         if abs(d) >= scientificNotationThreshold {
             return scientificNotationString(double: d)
         }
-        if abs(d) >= wordyThreshold {
+        if wordy && abs(d) >= wordyThreshold {
             return wordyString(double: d)
         }
         
@@ -93,7 +94,7 @@ class MyNumberFormatter: NumberFormatter {
         if abs(d) >= scientificNotationThreshold {
             return scientificNotationAttributedString(double: d, withDefaultAttributes: attrs)
         }
-        if abs(d) >= wordyThreshold {
+        if wordy && abs(d) >= wordyThreshold {
             return NSAttributedString(string: wordyString(double: d), attributes: attrs)
         }
         return NSAttributedString(string: super.string(for: d) ?? "-")
