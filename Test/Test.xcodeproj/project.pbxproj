@@ -11,7 +11,6 @@
 		07B8E0C423428A680041E543 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07B8E0C323428A680041E543 /* Assets.xcassets */; };
 		07B8E0DE23428BB00041E543 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B8E0DD23428BB00041E543 /* ViewController.swift */; };
 		07B8E0E023428BCF0041E543 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B8E0DF23428BCF0041E543 /* ViewController.xib */; };
-		07B8E0FC23439B340041E543 /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07B8E0EA23439B340041E543 /* LaunchScreen.strings */; };
 		07B8E0FE23439B340041E543 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B8E0EF23439B340041E543 /* UIView+extensions.swift */; };
 		07B8E0FF23439B340041E543 /* UITextView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B8E0F023439B340041E543 /* UITextView+extensions.swift */; };
 		07B8E10023439B340041E543 /* Plog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B8E0F123439B340041E543 /* Plog.swift */; };
@@ -32,7 +31,6 @@
 		07B8E0CB23428A680041E543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07B8E0DD23428BB00041E543 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		07B8E0DF23428BCF0041E543 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		07B8E0EB23439B340041E543 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		07B8E0EF23439B340041E543 /* UIView+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		07B8E0F023439B340041E543 /* UITextView+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+extensions.swift"; sourceTree = "<group>"; };
 		07B8E0F123439B340041E543 /* Plog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plog.swift; sourceTree = "<group>"; };
@@ -41,15 +39,12 @@
 		07B8E0F523439B340041E543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07B8E0F623439B340041E543 /* MyNumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNumberFormatter.swift; sourceTree = "<group>"; };
 		07B8E0F723439B340041E543 /* Float+addons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+addons.swift"; sourceTree = "<group>"; };
-		07B8E0F823439B340041E543 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		07B8E0FA23439B340041E543 /* Double+addons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+addons.swift"; sourceTree = "<group>"; };
 		07B8E0FB23439B340041E543 /* Data+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+extensions.swift"; sourceTree = "<group>"; };
 		07B8E11B23439B940041E543 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SwiftUtils.strings; sourceTree = "<group>"; };
 		07B8E11C23439B940041E543 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/SwiftUtils.strings; sourceTree = "<group>"; };
 		07B8E11D23439B940041E543 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SwiftUtils.strings; sourceTree = "<group>"; };
-		07B8E11F23439CFF0041E543 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		07B8E12023439D000041E543 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SwiftUtils.strings"; sourceTree = "<group>"; };
-		07B8E1212343A1DE0041E543 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		07B8E1222343A1DE0041E543 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/SwiftUtils.strings"; sourceTree = "<group>"; };
 		07B8E1232343A1ED0041E543 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/SwiftUtils.strings; sourceTree = "<group>"; };
 		07B8E1242343A1F60041E543 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/SwiftUtils.strings; sourceTree = "<group>"; };
@@ -120,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				07B8E11A23439B940041E543 /* SwiftUtils.strings */,
-				07B8E0EA23439B340041E543 /* LaunchScreen.strings */,
 				07B8E0EF23439B340041E543 /* UIView+extensions.swift */,
 				07B8E0F023439B340041E543 /* UITextView+extensions.swift */,
 				07B8E0F123439B340041E543 /* Plog.swift */,
@@ -224,7 +218,6 @@
 				07B8E0E023428BCF0041E543 /* ViewController.xib in Resources */,
 				07B8E11E23439B940041E543 /* SwiftUtils.strings in Resources */,
 				07B8E10323439B340041E543 /* LaunchScreen.storyboard in Resources */,
-				07B8E0FC23439B340041E543 /* LaunchScreen.strings in Resources */,
 				07B8E0C423428A680041E543 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,21 +246,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		07B8E0EA23439B340041E543 /* LaunchScreen.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				07B8E0EB23439B340041E543 /* de */,
-				07B8E0F823439B340041E543 /* ru */,
-			);
-			name = LaunchScreen.strings;
-			sourceTree = "<group>";
-		};
 		07B8E0F423439B340041E543 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				07B8E0F523439B340041E543 /* Base */,
-				07B8E11F23439CFF0041E543 /* zh-Hans */,
-				07B8E1212343A1DE0041E543 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
