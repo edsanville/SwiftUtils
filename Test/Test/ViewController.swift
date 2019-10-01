@@ -16,18 +16,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         let f = MyNumberFormatter(significantDigits: 6)
 
-        for size in stride(from: 6, to: 36, by: 4) {
-            let attributes: [NSAttributedString.Key: Any] = [
-                .font: UIFont.systemFont(ofSize: CGFloat(size)),
-            ]
+//        for size in stride(from: 6, to: 36, by: 4) {
+//            let attributes: [NSAttributedString.Key: Any] = [
+//                .font: UIFont.systemFont(ofSize: CGFloat(size)),
+//            ]
+//
+//            textView.print(f.attributedString(for: 1.2345678901e15, withDefaultAttributes: attributes)!)
+//        }
+//        
+//        let attributes: [NSAttributedString.Key: Any] = [
+//            .font: UIFont.systemFont(ofSize: 26),
+//        ]
+//        textView.print(f.attributedString(for: 1234567890, withDefaultAttributes: attributes)!)
 
-            textView.print(f.attributedString(for: 1.2345678901e15, withDefaultAttributes: attributes)!)
-        }
-        
-        let attributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.systemFont(ofSize: 26),
-        ]
-        textView.print(f.attributedString(for: 1234567890, withDefaultAttributes: attributes)!)
+        textView.print(f.attributedString(for: 12345678901.0, withDefaultAttributes: nil)!)
 
     }
 
