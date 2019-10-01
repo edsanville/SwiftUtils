@@ -47,4 +47,8 @@ extension NSAttributedString {
 
     }
 
+    static func +(lhs: NSAttributedString, rhs: NSAttributedString) -> NSAttributedString {
+        return lhs.appending(rhs)
+    }
+
 }

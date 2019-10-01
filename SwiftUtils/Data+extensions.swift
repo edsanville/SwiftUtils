@@ -8,10 +8,10 @@
 
 import Foundation
 
-extension Data {
+extension Foundation.Data {
 
-    static func withRandomBytes(_ count: Int) -> Data {
-        var data = Data()
+    static func withRandomBytes(_ count: Int) -> Foundation.Data {
+        var data = Foundation.Data()
 
         for _ in 1...count {
             data.append(UInt8.random(in: UInt8.min...UInt8.max))

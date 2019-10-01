@@ -22,7 +22,7 @@ class MyNumberFormatter: NumberFormatter {
         (s: String) -> String in
         return Bundle.main.localizedString(forKey: s, value: s, table: "SwiftUtils")
     }
-    static let timesSymbol = "⨉"
+    static let timesSymbol = "×"
 
     // MARK: Strings
 
