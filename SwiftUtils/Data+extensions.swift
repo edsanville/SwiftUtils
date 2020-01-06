@@ -20,4 +20,18 @@ extension Foundation.Data {
         return data
     }
 
+    static func randomAuthKey() -> Foundation.Data {
+        let byte_palette = (UInt8.min...UInt8.max).compactMap {
+            val in
+            return (val == 0x00 || val == 0x0a) ? nil : val
+        }
+
+        var bytes: [UInt8] = []
+
+        for _ in 0..<16 {
+            bytes.append(byte_palette.randomElement()!)
+        }
+        return Data(bytes)
+    }
+
 }
