@@ -13,7 +13,7 @@ extension Foundation.Data {
     static func withRandomBytes(_ count: Int) -> Foundation.Data {
         var data = Foundation.Data()
 
-        for _ in 1...count {
+        for _ in 0..<count {
             data.append(UInt8.random(in: UInt8.min...UInt8.max))
         }
 
