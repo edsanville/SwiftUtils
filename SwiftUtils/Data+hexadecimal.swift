@@ -11,8 +11,8 @@ import Foundation
 extension Data {
     
     var hexadecimal: String {
-        return map { String(format: "%02X", $0) }
-            .joined(separator:":")
+        return map { String(format: "%02x", $0) }
+            .joined()
     }
     
 }
