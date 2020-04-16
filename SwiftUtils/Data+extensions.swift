@@ -13,25 +13,27 @@ extension Foundation.Data {
     static func withRandomBytes(_ count: Int) -> Foundation.Data {
         var data = Foundation.Data()
 
-        for _ in 0..<count {
+        for _ in 1...count {
             data.append(UInt8.random(in: UInt8.min...UInt8.max))
         }
 
         return data
     }
 
-    static func randomAuthKey() -> Foundation.Data {
-        let byte_palette = (UInt8.min...UInt8.max).compactMap {
-            val in
-            return (val == 0x00 || val == 0x0a) ? nil : val
+    func read<T>(offset: inout Int) -> T {
+        let result: T = self.withUnsafeBytes {
+            return $0.load(fromByteOffset: offset, as: T.self)
         }
+        offset += MemoryLayout<T>.size
+        return result
+    }
 
-        var bytes: [UInt8] = []
-
-        for _ in 0..<16 {
-            bytes.append(byte_palette.randomElement()!)
-        }
-        return Data(bytes)
+    func readPascalString(offset: inout Int) -> String? {
+        let count: UInt8 = self.read(offset: &offset)
+        let stringBuffer = self.subdata(in: offset..<offset+Int(count))
+        offset += (((Int(count) - 1 + 1) / 4 + 1) * 4 - 1) // Ridiculous, I know
+        return String(data: stringBuffer, encoding: .utf8)
     }
 
 }
+

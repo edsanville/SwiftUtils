@@ -34,6 +34,10 @@ extension Double {
         return min + FMOD(self - min, max - min)
     }
 
+    func clip(minVal: Double, maxVal: Double) -> Double {
+        return min(max(self, minVal), maxVal)
+    }
+
 }
 
 func FMOD(_ x: Double, _ y: Double) -> Double {
