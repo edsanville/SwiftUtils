@@ -8,6 +8,11 @@
 
 import Foundation
 
+let checkmark = "✅"
+let info = "ℹ️"
+let warning = "⚠️"
+let error = "🛑"
+
 @objcMembers
 final class Plog: NSObject {
 
@@ -30,19 +35,9 @@ final class Plog: NSObject {
         log = ""
     }
 
-    class func plog(_ str: CustomStringConvertible, file_path: String = #file, line: Int = #line) {
+    class func plog(prefix: String, str: CustomStringConvertible, file_path: String = #file, line: Int = #line) {
         let file = URL(fileURLWithPath: file_path).lastPathComponent
-        let line = "✅ \(file) (\(line)): \(str)"
-        print(line)
-
-        if Plog.saveLogs {
-            Plog.append(line: line)
-        }
-    }
-
-    class func perr(_ str: CustomStringConvertible, file_path: String = #file, line: Int = #line) {
-        let file = URL(fileURLWithPath: file_path).lastPathComponent
-        let line = "🛑 \(file) (\(line)): \(str)"
+        let line = "\(prefix) \(file) (\(line)): \(str)"
         print(line)
 
         if Plog.saveLogs {
@@ -53,9 +48,17 @@ final class Plog: NSObject {
 }
 
 func plog(_ str: CustomStringConvertible, file_path: String = #file, line: Int = #line) {
-    Plog.plog(str, file_path: file_path, line: line)
+    Plog.plog(prefix: info, str: str, file_path: file_path, line: line)
+}
+
+func psuccess(_ str: CustomStringConvertible, file_path: String = #file, line: Int = #line) {
+    Plog.plog(prefix: checkmark, str: str, file_path: file_path, line: line)
+}
+
+func pwarn(_ str: CustomStringConvertible, file_path: String = #file, line: Int = #line) {
+    Plog.plog(prefix: warning, str: str, file_path: file_path, line: line)
 }
 
 func perr(_ str: CustomStringConvertible, file_path: String = #file, line: Int = #line) {
-    Plog.perr(str, file_path: file_path, line: line)
+    Plog.plog(prefix: error, str: str, file_path: file_path, line: line)
 }
