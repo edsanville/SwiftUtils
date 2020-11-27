@@ -59,4 +59,13 @@ import UIKit
         }
     }
 
+    @IBInspectable var shadowOffset: CGSize {
+        get {
+            return layer.shadowOffset
+        }
+        set(r) {
+            layer.shadowOffset = r
+        }
+    }
+
 }
