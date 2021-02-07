@@ -8,6 +8,7 @@
 
 import UIKit
 
+@objc
 extension UIViewController {
 
     func presentAlert(message: String, completion: (() -> Void)? = nil) {
@@ -23,6 +24,14 @@ extension UIViewController {
         alert.addAction(action)
 
         self.present(alert, animated: true, completion: nil)
+    }
+
+    func presentAlert(for error: NSError?) {
+        guard let error = error else { return }
+
+        let controller = UIAlertController(title: T("Error"), message: error.localizedDescription, preferredStyle: .alert)
+        controller.addAction(UIAlertAction(title: T("OK"), style: .default, handler: nil))
+        present(controller, animated: true, completion: nil)
     }
 
 }
