@@ -25,8 +25,4 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 
-    class func presentAlert(message: String, completion: (() -> Void)? = nil) {
-        UIApplication.shared.keyWindow?.rootViewController?.presentAlert(message: message, completion: completion)
-    }
-
 }
