@@ -41,4 +41,22 @@ import UIKit
         }
     }
 
+    @IBInspectable var shadowOpacity: Float {
+        get {
+            return layer.shadowOpacity
+        }
+        set(r) {
+            layer.shadowOpacity = r
+        }
+    }
+
+    @IBInspectable var shadowRadius: CGFloat {
+        get {
+            return layer.shadowRadius
+        }
+        set(r) {
+            layer.shadowRadius = r
+        }
+    }
+
 }
