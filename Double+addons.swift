@@ -27,6 +27,10 @@ extension Double {
             return Double(f)
         }
 
+        if let n = stringOrNumber as? NSNumber {
+            return n.doubleValue
+        }
+
         return nil
     }
 
