@@ -36,4 +36,26 @@ struct Defaults {
         }
     }
 
+    static func uint32(forKey key: String) -> UInt32? {
+        if let r = UserDefaults.standard.object(forKey: key) as? NSNumber {
+            return r.uint32Value
+        }
+        else {
+            return nil
+        }
+    }
+
+    static func double(forKey key: String) -> Double? {
+        if let r = UserDefaults.standard.object(forKey: key) as? NSNumber {
+            return r.doubleValue
+        }
+        else {
+            return nil
+        }
+    }
+
+    static func set(_ value: Any?, forKey key: String) {
+        UserDefaults.standard.set(value, forKey: key)
+    }
+
 }
