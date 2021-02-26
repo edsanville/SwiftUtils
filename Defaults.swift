@@ -54,6 +54,15 @@ struct Defaults {
         }
     }
 
+    static func float(forKey key: String) -> Float? {
+        if let r = UserDefaults.standard.object(forKey: key) as? NSNumber {
+            return r.floatValue
+        }
+        else {
+            return nil
+        }
+    }
+
     static func set(_ value: Any?, forKey key: String) {
         UserDefaults.standard.set(value, forKey: key)
     }
