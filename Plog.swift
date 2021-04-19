@@ -16,7 +16,7 @@ let error = "🛑"
 @objcMembers
 final class Plog: NSObject {
 
-    static var saveLogs = true
+    static var saveLogs = false
     private static var log = ""
 
     class func append(line: String) {
