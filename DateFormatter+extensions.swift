@@ -16,4 +16,12 @@ extension DateFormatter {
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         return formatter
     }
+
+    static let httpDateFormatter = { () -> DateFormatter in
+        let f = DateFormatter()
+        f.dateFormat = "EEE',' dd MMM yyyy HH':'mm':'ss 'GMT'"
+        f.locale = Locale.init(identifier: "en_US")
+        f.timeZone = TimeZone.init(abbreviation: "GMT")
+        return f
+    }()
 }
