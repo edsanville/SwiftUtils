@@ -16,7 +16,7 @@ extension Double {
         }
 
         if let s = stringOrNumber as? String {
-            return Double(s)
+            return Double(s.trimmingCharacters(in: .whitespacesAndNewlines))
         }
 
         if let d = stringOrNumber as? Double {
@@ -25,6 +25,10 @@ extension Double {
 
         if let f = stringOrNumber as? Float {
             return Double(f)
+        }
+
+        if let n = stringOrNumber as? NSNumber {
+            return n.doubleValue
         }
 
         return nil

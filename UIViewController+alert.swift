@@ -8,6 +8,7 @@
 
 import UIKit
 
+@objc
 extension UIViewController {
 
     func presentAlert(message: String, completion: (() -> Void)? = nil) {
@@ -25,8 +26,12 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 
-    class func presentAlert(message: String, completion: (() -> Void)? = nil) {
-        UIApplication.shared.keyWindow?.rootViewController?.presentAlert(message: message, completion: completion)
+    func presentAlert(for error: NSError?) {
+        guard let error = error else { return }
+
+        let controller = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        controller.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(controller, animated: true, completion: nil)
     }
 
 }

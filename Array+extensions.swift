@@ -15,4 +15,18 @@ extension Array {
 
         return self[index]
     }
+
+    mutating func append(optional item: Element?) {
+        if let item = item {
+            self.append(item)
+        }
+    }
+
+    mutating func append<S>(contentsOfOptional newElements: S?) where Element == S.Element, S : Sequence {
+        if let sequence = newElements {
+            sequence.forEach { item in
+                self.append(item)
+            }
+        }
+    }
 }

@@ -24,4 +24,12 @@ extension DateFormatter {
         f.timeZone = TimeZone.init(abbreviation: "GMT")
         return f
     }()
+
+    static var medium: DateFormatter = {
+        let f = DateFormatter()
+        f.dateStyle = .medium
+        f.timeStyle = .medium
+        return f
+    }()
+
 }
