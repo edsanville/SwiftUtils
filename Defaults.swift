@@ -63,6 +63,10 @@ struct Defaults {
         }
     }
 
+    static func string(for key: String) -> String? {
+        return UserDefaults.standard.string(forKey: key)
+    }
+
     static func set(_ value: Any?, forKey key: String) {
         UserDefaults.standard.set(value, forKey: key)
     }
