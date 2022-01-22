@@ -16,11 +16,14 @@ let error = "🛑"
 @objcMembers
 final class Plog: NSObject {
 
-    static var saveLogs = true
+    static var saveLogs = false
     private static var log = ""
+    private static let lock = NSLock()
 
-    class func append(line: String) {
+    private static func append(line: String) {
+        lock.lock()
         log.append(line + "\n")
+        lock.unlock()
     }
 
     class func string() -> String {
@@ -32,7 +35,9 @@ final class Plog: NSObject {
     }
 
     class func clear() {
+        lock.lock()
         log = ""
+        lock.unlock()
     }
 
     class func plog(prefix: String, str: CustomStringConvertible, file_path: String = #file, line: Int = #line) {
