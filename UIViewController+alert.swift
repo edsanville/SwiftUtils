@@ -26,11 +26,13 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 
-    func presentAlert(for error: NSError?) {
+    func presentAlert(for error: Error?, completion: (()->Void)? = nil) {
         guard let error = error else { return }
 
         let controller = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-        controller.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        controller.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            completion?()
+        }))
         present(controller, animated: true, completion: nil)
     }
 
