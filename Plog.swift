@@ -12,6 +12,8 @@ let checkmark = "✅"
 let info = "ℹ️"
 let warning = "⚠️"
 let error = "🛑"
+let debug = "📄 [debug] "
+let debug2 = "📄 [debug2]"
 
 @objcMembers
 final class Plog: NSObject {
@@ -42,12 +44,19 @@ final class Plog: NSObject {
 
     class func plog(prefix: String, str: CustomStringConvertible?, file_path: String = #file, line: Int = #line) {
         let file = URL(fileURLWithPath: file_path).lastPathComponent
-        let line = "\(prefix) \(file) (\(line)): \(str ?? "nil")"
-        print(line)
 
-        if Plog.saveLogs {
-            Plog.append(line: line)
+        // We want each line of the str on a different line, all with the same prefix
+        let strLines = str?.description.split(separator: "\n") ?? ["nil"]
+
+        for strLine in strLines {
+            let line = "\(prefix) \(file) (\(line)): \(strLine)"
+            print(line)
+
+            if Plog.saveLogs {
+                Plog.append(line: line)
+            }
         }
+
     }
 
 }
@@ -66,4 +75,16 @@ func pwarn(_ str: CustomStringConvertible?, file_path: String = #file, line: Int
 
 func perr(_ str: CustomStringConvertible?, file_path: String = #file, line: Int = #line) {
     Plog.plog(prefix: error, str: str, file_path: file_path, line: line)
+}
+
+func pdebug(_ str: CustomStringConvertible?, file_path: String = #file, line: Int = #line) {
+    #if PLOG_DEBUG
+    Plog.plog(prefix: debug, str: str, file_path: file_path, line: line)
+    #endif
+}
+
+func pdebug2(_ str: CustomStringConvertible?, file_path: String = #file, line: Int = #line) {
+    #if PLOG_DEBUG
+    Plog.plog(prefix: debug2, str: str, file_path: file_path, line: line)
+    #endif
 }
