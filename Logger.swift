@@ -59,7 +59,7 @@ final class Logger: NSObject {
     }
 
 
-    func debug(str: CustomStringConvertible?, file_path: String = #file, line: Int = #line) {
+    func debug(_ str: CustomStringConvertible?, file_path: String = #file, line: Int = #line) {
         #if DEVELOPMENT
         self.log(level: .debug, str: str)
         #endif
@@ -104,5 +104,5 @@ func perr(_ str: CustomStringConvertible?, file_path: String = #file, line: Int 
 }
 
 func pdebug(_ str: CustomStringConvertible?, file_path: String = #file, line: Int = #line) {
-    logger.debug(str: str, file_path: file_path, line: line)
+    logger.debug(str, file_path: file_path, line: line)
 }
