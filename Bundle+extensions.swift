@@ -23,7 +23,7 @@ extension Bundle {
     }
 
     func build() -> String {
-        return self.string(forInfoDictionaryKey: "CFBundleVersionString")
+        return self.string(forInfoDictionaryKey: "CFBundleVersion")
     }
 
 }
