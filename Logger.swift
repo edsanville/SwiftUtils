@@ -103,6 +103,10 @@ func perr(_ str: CustomStringConvertible?, file_path: String = #file, line: Int 
     logger.log(level: .error, str: str, file_path: file_path, line: line)
 }
 
+func perr(_ error: Error?, file_path: String = #file, line: Int = #line) {
+    logger.log(level: .error, str: error as CustomStringConvertible?, file_path: file_path, line: line)
+}
+
 func pdebug(_ str: CustomStringConvertible?, file_path: String = #file, line: Int = #line) {
     logger.debug(str, file_path: file_path, line: line)
 }
