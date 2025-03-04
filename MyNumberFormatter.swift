@@ -14,7 +14,7 @@ protocol Translator {
 }
 
 @objcMembers
-class MyNumberFormatter: NumberFormatter {
+class MyNumberFormatter: NumberFormatter, @unchecked Sendable  {
 
     var scientificNotationThreshold = 1e13
     var wordy = true
