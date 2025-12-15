@@ -27,4 +27,18 @@ extension String {
         return String(self[startIndex...endIndex])
     }
 
+
+    /// Pads or crops a string to a certain character width.
+    /// - Parameters:
+    ///   - length: Desired width, in characters.
+    ///   - pad: Padding character.
+    /// - Returns: The padded string.
+    func fixedWidth(_ length: Int, pad: Character=" ") -> String {
+        if self.count > length {
+            return String(self.prefix(length))
+        } else {
+            return self.padding(toLength: length, withPad: String(pad), startingAt: 0)
+        }
+    }
+
 }
